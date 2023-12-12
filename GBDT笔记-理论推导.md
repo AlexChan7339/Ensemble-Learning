@@ -10,7 +10,7 @@
 
 ## Boosting 思想
 
-Boosting模型可以抽象为一个前向加法模型（additive model）：`$F(x;{\alpha_{m}, \theta_{m}})=\sum_{m=1}^{M}\alpha_{m}f(x;\theta_{m})$`
+Boosting模型可以抽象为一个前向加法模型（additive model）：$F(x;{\alpha_{m}, \theta_{m}})=\sum_{m=1}^{M}\alpha_{m}f(x;\theta_{m})$
 
 其中， x 为输入样本，$f(x;\theta_{m})$ 为每个基学习器，$\theta_{m}$为每个基学习器的参数，treeBoost论文里面讨论的==基学习器都是CART回归树==。Boost是"提升"的意思，一般Boosting算法都是一个迭代的过程，每一次新的训练都是为了改进上一次的结果，这要求==每个基学习器的方差足够小（稳定），即足够简单(模型参数足够简单，不会导致过拟合）==（weak machine），因为Boosting的迭代过程足以让bias减小，但是不能减小方差。（Bagging的基分类器是偏差小方差大，而boosting的基分类器是偏差大方差小）
 
